@@ -172,11 +172,8 @@ class PrimarySolidTextfield extends StatelessWidget {
             color: hintTextColor ?? grayColor,
             fontSize: screenWidth < screenHeight ? 16.sp : 10.sp,
           ),
-          suffixIcon: showSuffixIcon ? suffixIcon : null,
-          prefixIcon: prefixIcon,
-          border: InputBorder.none,
+          textCapitalization: capitalization ?? TextCapitalization.none,
         ),
-        textCapitalization: capitalization ?? TextCapitalization.none,
       ),
     );
   }
