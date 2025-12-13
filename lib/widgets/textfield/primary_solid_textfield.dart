@@ -129,51 +129,6 @@ class PrimarySolidTextfield extends StatelessWidget {
           ),
           textCapitalization: capitalization ?? TextCapitalization.none,
         ),
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: TextField(
-        enabled: enable,
-        readOnly: readOnly,
-        onTap: () => onClick != null ? onClick!() : {},
-        controller: controller,
-        textInputAction: action,
-        keyboardType: type,
-        autofillHints: autoFill,
-        obscureText: secureText,
-        focusNode: focusNode,
-        inputFormatters: inputFormatter,
-        autofocus: autoFocus!,
-        maxLines: disableMaxLine ? 5 : 1,
-        maxLength: maxLength,
-        onChanged: (value) => onChange != null ? onChange!(value) : {},
-        onSubmitted: (value) => onSubmit != null ? onSubmit!(value) : {},
-        onEditingComplete:
-            () => onEditComplete != null ? onEditComplete!() : {},
-        style: TextStyle(
-          fontSize: context.bodyText,
-          fontWeight: FontWeight.normal,
-          color: textColor ?? Colors.black,
-        ),
-        decoration: InputDecoration(
-          hintText: hintText,
-          contentPadding:
-              contentPadding ??
-              EdgeInsets.symmetric(
-                vertical: screenWidth < screenHeight ? 4.w : 2.h,
-                horizontal: screenWidth < screenHeight ? 2.w : 1.h,
-              ),
-          filled: true,
-          fillColor:
-              readOnly == true
-                  ? grayColor.withValues(alpha: 0.4)
-                  : (backgroundColor ?? grayFormColor),
-          counterText: '',
-          hintStyle: styleSubtitle.copyWith(
-            color: hintTextColor ?? grayColor,
-            fontSize: screenWidth < screenHeight ? 16.sp : 10.sp,
-          ),
-          textCapitalization: capitalization ?? TextCapitalization.none,
-        ),
       ),
     );
   }
