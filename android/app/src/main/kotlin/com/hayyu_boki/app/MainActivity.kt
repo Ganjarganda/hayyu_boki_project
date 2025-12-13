@@ -1,4 +1,4 @@
-package com.hayuuboki.app.hayyu_boki_project
+package com.hayyu_boki.app
 
 import io.flutter.embedding.android.FlutterActivity
 
