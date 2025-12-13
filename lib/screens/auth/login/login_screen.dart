@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hayyu_boki_project/controllers/login/login_controller.dart';
+import 'package:hayyu_boki_project/utils/spacing/ResponsiveSpacing.dart';
+import 'package:hayyu_boki_project/widgets/textfield/primary_solid_textfield.dart';
 
 class LoginScreen extends GetResponsiveView<LoginController> {
   LoginScreen({super.key});
@@ -14,7 +16,44 @@ class LoginScreen extends GetResponsiveView<LoginController> {
 
   @override
   Widget? phone() {
-    return Scaffold(body: Center(child: Text('phone')));
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
+        body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: screen.context.paddingBasic,
+            ),
+            child: Form(
+              key: controller.formKey,
+              child: AutofillGroup(
+                child: Column(
+                  children: [
+                    /// email
+                    PrimarySolidTextfield(
+                      hintText: 'your@email.com',
+                      action: TextInputAction.done,
+                      type: TextInputType.emailAddress,
+                      controller: controller.emailController,
+                      autoFill: const [AutofillHints.email],
+                      backgroundColor: Colors.white,
+                      withShadow: true,
+                      onEditComplete: () {
+                        Get.focusScope?.unfocus();
+                      },
+                      onChange: (value) {},
+                    ),
+
+                    /// password
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -26,5 +65,4 @@ class LoginScreen extends GetResponsiveView<LoginController> {
   Widget? desktop() {
     return Scaffold(body: Center(child: Text('desktop')));
   }
-
 }
