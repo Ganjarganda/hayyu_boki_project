@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hayyu_boki_project/utils/text/text_utils.dart';
 
 class PrimarySolidTextfield extends StatelessWidget {
   final String? hintText;
@@ -79,9 +80,10 @@ class PrimarySolidTextfield extends StatelessWidget {
         onSubmitted: (value) => onSubmit != null ? onSubmit!(value) : {},
         onEditingComplete:
             () => onEditComplete != null ? onEditComplete!() : {},
-        style: styleSubtitle.copyWith(
-          color: textColor ?? blackColor,
-          fontSize: screenWidth < screenHeight ? 16.sp : 10.sp,
+        style: TextStyle(
+          fontSize: context.bodyText,
+          fontWeight: FontWeight.normal,
+          color: textColor ?? Colors.black,
         ),
         decoration: InputDecoration(
           hintText: hintText,
