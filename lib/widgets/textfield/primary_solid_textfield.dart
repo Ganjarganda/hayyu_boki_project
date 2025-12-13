@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:hayyu_boki_project/utils/spacing/ResponsiveSpacing.dart';
 import 'package:hayyu_boki_project/utils/text/text_utils.dart';
 
@@ -30,8 +29,6 @@ class PrimarySolidTextfield extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatter;
   final bool enable;
   final Iterable<String>? autoFill;
-
-  // Parameter baru untuk Shadow
   final bool withShadow;
 
   const PrimarySolidTextfield({
@@ -61,7 +58,7 @@ class PrimarySolidTextfield extends StatelessWidget {
     this.inputFormatter,
     this.enable = true,
     this.autoFill,
-    this.withShadow = false, // Default false agar tidak merusak UI lama
+    this.withShadow = false,
   });
 
   @override
