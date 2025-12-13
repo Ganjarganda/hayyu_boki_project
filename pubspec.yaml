@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8 #android ios linux macos web windows
   get: ^4.6.6 #android ios linux macos web windows
+  get_storage: ^2.1.1 #android ios linux macos web windows
   package_info_plus: ^8.1.2 #android ios linux macos web windows
   flutter_gen_runner: ^5.8.0 #android ios linux macos windows
   build_runner: ^2.4.13 #linux macos windows

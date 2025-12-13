@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:hayyu_boki_project/services/storage/box_storage.dart';
 import 'package:hayyu_boki_project/utils/language/app_translations.dart';
 import 'package:hayyu_boki_project/utils/package_info/package_info_util.dart';
 
@@ -7,7 +9,11 @@ import 'controllers/app_controllers_binding.dart';
 import 'routes/app_routes.dart';
 
 Future<void> main() async {
+  // WAJIB: Pastikan inisialisasi Flutter sudah selesai
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Inisialisasi Get Storage
+  await GetStorage.init(BoxStorage.boxStorage);
 
   // package info
   try {
@@ -34,7 +40,6 @@ class MyApp extends StatelessWidget {
       // 1. Setup Bahasa
       translations: AppTranslations(),
       locale: const Locale('en', 'US'),
-      // Bahasa Default
       fallbackLocale: const Locale('id', 'ID'),
 
       // 2. Setup Tema (Light & Dark)
