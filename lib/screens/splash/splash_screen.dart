@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hayyu_boki_project/controllers/splash/splash_controller.dart';
-import 'package:hayyu_boki_project/utils/spacing/ResponsiveSpacing.dart';
 import 'package:hayyu_boki_project/utils/text/text_utils.dart';
 
 import '../../gen/assets.gen.dart';
 import '../../utils/package_info/package_info_util.dart';
+import '../../utils/size/ResponsiveSize.dart';
 
 class SplashScreen extends GetView<SplashController> {
   const SplashScreen({super.key});
@@ -48,7 +49,7 @@ class SplashScreen extends GetView<SplashController> {
                 padding: EdgeInsets.all(context.paddingTiny),
                 child: Text(
                   PackageInfoUtil().getAppVersion(),
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: context.h3,
                     fontWeight: FontWeight.bold,
                     color: Get.isDarkMode ? Colors.white : Colors.black,

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hayyu_boki_project/services/storage/language/event_language.dart';
@@ -6,6 +5,8 @@ import 'package:hayyu_boki_project/services/storage/language/event_language.dart
 class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  RxBool hidePassword = true.obs;
 
   @override
   void onInit() {

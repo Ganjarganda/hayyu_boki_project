@@ -5,7 +5,7 @@ import 'package:hayyu_boki_project/utils/text/text_utils.dart';
 
 import '../../utils/size/ResponsiveSize.dart';
 
-class PrimarySolidTextfield extends StatelessWidget {
+class PrimarySolidPassTextfield extends StatelessWidget {
   final String? hintText;
   final TextInputAction? action;
   final TextInputType? type;
@@ -15,11 +15,13 @@ class PrimarySolidTextfield extends StatelessWidget {
   final Function? onClick;
   final bool disableMaxLine;
   final TextCapitalization? capitalization;
+  final bool showSuffixIcon;
   final Function? onEditComplete;
   final Function(String)? onChange;
   final Function(String)? onSubmit;
   final Color? textColor;
   final Color? hintTextColor;
+  final Widget? suffixIcon;
   final Widget? prefixIcon;
   final FocusNode? focusNode;
   final bool? autoFocus;
@@ -31,7 +33,7 @@ class PrimarySolidTextfield extends StatelessWidget {
   final Iterable<String>? autoFill;
   final bool withShadow;
 
-  const PrimarySolidTextfield({
+  const PrimarySolidPassTextfield({
     super.key,
     required this.hintText,
     required this.action,
@@ -42,11 +44,13 @@ class PrimarySolidTextfield extends StatelessWidget {
     this.onClick,
     this.disableMaxLine = false,
     this.capitalization,
+    this.showSuffixIcon = false,
     this.onEditComplete,
     this.onChange,
     this.onSubmit,
     this.textColor,
     this.hintTextColor,
+    this.suffixIcon,
     this.prefixIcon,
     this.focusNode,
     this.autoFocus = false,
@@ -102,6 +106,7 @@ class PrimarySolidTextfield extends StatelessWidget {
             fontWeight: FontWeight.normal,
             color: textColor ?? Colors.black,
           ),
+          textAlignVertical: TextAlignVertical.center,
           decoration: InputDecoration(
             hintText: hintText,
             contentPadding:
@@ -121,6 +126,7 @@ class PrimarySolidTextfield extends StatelessWidget {
               fontWeight: FontWeight.normal,
               color: hintTextColor ?? Colors.grey,
             ),
+            suffixIcon: showSuffixIcon ? suffixIcon : null,
             prefixIcon: prefixIcon,
             border: InputBorder.none,
           ),
